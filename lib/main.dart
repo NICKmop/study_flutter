@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:study_flutter/studyuseful/studyuseful5.dart';
+import 'package:study_flutter/study/study10.dart';
 
 
 void main() {
-  runApp(const MyApp());
+  // runApp(studyuseful5());
+  // runApp(study10());
+  runApp(
+    MaterialApp(
+      home: study10(),
+    )
+  );
 }
-
-
-
-
-
-
-
 
 
 class MyApp extends StatelessWidget {
