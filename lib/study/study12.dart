@@ -1,14 +1,15 @@
 // 권한 관련 적용법
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:contacts_service/contacts_service.dart';
 
-class study11 extends StatefulWidget {
-  const study11({Key? key}) : super(key: key);
+class study12 extends StatefulWidget {
+  const study12({Key? key}) : super(key: key);
   @override
-  State<study11> createState() => _study11State();
+  State<study12> createState() => _study12State();
 }
 
-class _study11State extends State<study11> {
+class _study12State extends State<study12> {
 
   //async 가 있어야 await 사용 가능임.
   getPermission() async {
@@ -16,25 +17,34 @@ class _study11State extends State<study11> {
     var status = await Permission.contacts.status;
     if (status.isGranted) {
       print('허락됨');
+      var contacts = await ContactsService.getContacts();
+      print(contacts[0].displayName);
+      // 연락처에 사람 이름 추가
+      // contacts[0].givenName = '민수';
+      // contacts[0].familyName = '김';
+      // ContactsService.addContanct(newPerson);
+      setState((){
+        name = contacts;
+      });
+      print(name);
     } else if (status.isDenied) {
       print('거절됨');
       // 팝업창 실행을 해달라는 함수임
       Permission.contacts.request();
     }
   }
-  
+
   // app이 켜질때 widget이 처름 로드될때 한번 실행 하는 함수
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     getPermission();
   }
-  
-  
+
+
   var total = 3; //앱의 저장된 친구 수
   var a = 3;
-  var name = ['김영숙','홍길동','류영훈'];
+  var name = [];
   var like = [0,0,0];
 
   //함수 만드는 법
@@ -63,7 +73,7 @@ class _study11State extends State<study11> {
             itemBuilder: ( c, i ){
               return ListTile(
                 leading: Image.asset('assets/logo.png', width: 100,),
-                title: Text(name[i]),
+                title: Text(name[i].displayName),
               );
             }
         ),

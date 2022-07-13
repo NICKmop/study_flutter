@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:study_flutter/studyuseful/studyuseful5.dart';
-import 'package:study_flutter/study/study10.dart';
+import 'package:study_flutter/studyuseful/studyuseful7.dart';
+import 'package:study_flutter/study/study12.dart';
 
 
 void main() {
@@ -8,7 +8,7 @@ void main() {
   // runApp(study10());
   runApp(
     MaterialApp(
-      home: study10(),
+      home: studyuseful7(),
     )
   );
 }

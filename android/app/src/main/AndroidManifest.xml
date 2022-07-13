@@ -1,6 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.study.stnet.study_flutter">
-   <application
+
+<!-- 유저에게 받을 permission -->
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+
+    <application
         android:label="study_flutter"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
