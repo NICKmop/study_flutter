@@ -7,9 +7,7 @@ var theme = ThemeData(
     ),
   ),
   iconTheme: IconThemeData(color: Colors.red, size: 60),
-  appBarTheme: AppBarTheme(
-    color: Colors.grey,
-  ),
+  appBarTheme: AppBarTheme(color: Colors.grey,),
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
     backgroundColor: Colors.white,
     elevation: 2,
