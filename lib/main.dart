@@ -1,76 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:study_flutter/studyuseful/studyuseful7.dart';
-import 'package:study_flutter/study/study12.dart';
-
+import 'package:study_flutter/study/study_instagram/insta_study1.dart';
+import 'package:study_flutter/studyResult/phoneNumber.dart';
+import 'package:study_flutter/studyResult/mapApi.dart';
+import 'package:get/get.dart';
+import 'style/style.dart' as style;
 
 void main() {
-  // runApp(studyuseful5());
-  // runApp(study10());
+
   runApp(
-    MaterialApp(
-      home: studyuseful7(),
+    GetMaterialApp(
+      theme : style.theme,
+      title: 'flutter demo',
+      initialRoute: '/',
+      getPages: [
+        GetPage(name: '/', page: () => insta_study1()),
+        GetPage(name: '/second', page: () => phoneNumber()),
+        GetPage(name: '/three', page: () => mapApi()),
+      ],
     )
   );
-}
-
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
-  }
 }

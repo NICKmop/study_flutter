@@ -18,7 +18,6 @@ class studyuseful7State extends State<studyuseful7> {
     if (status.isGranted) {
       print('허락됨');
       var contacts = await ContactsService.getContacts();
-      print(contacts[0].displayName);
       // 연락처에 사람 이름 추가
       // contacts[0].givenName = '민수';
       // contacts[0].familyName = '김';
@@ -115,7 +114,10 @@ class DialogUI extends StatelessWidget {
                 onPressed: (){
 
                   var newContact = Contact();
+
                   newContact.displayName = inputData.text;
+                  newContact.givenName = inputData.text;
+
                   ContactsService.addContact(newContact);
                   addOne(newContact);
 

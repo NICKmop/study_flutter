@@ -10,7 +10,6 @@ class study13 extends StatefulWidget {
 }
 
 class _study13State extends State<study13> {
-
   //async 가 있어야 await 사용 가능임.
   getPermission() async {
     // await -> 기다려달라는 함수임. 기다리고 다음 줄 실행해라.
@@ -26,7 +25,6 @@ class _study13State extends State<study13> {
       setState((){
         name = contacts;
       });
-      print(name);
     } else if (status.isDenied) {
       print('거절됨');
       // 팝업창 실행을 해달라는 함수임
@@ -49,7 +47,6 @@ class _study13State extends State<study13> {
 
   //함수 만드는 법
   addOne(inputData2){
-    print(inputData2); //사용자 정보
     setState((){
       total++;
       name.add(inputData2);
